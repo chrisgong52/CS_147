@@ -3,7 +3,13 @@
 #include "Adafruit_CAP1188.h"
 
 TFT_eSPI tft = TFT_eSPI();
-Adafruit_CAP1188 cap = Adafruit_CAP1188();
+uint8_t k_sclk = 25;
+uint8_t k_mosi = 32;
+uint8_t k_miso = 33;
+uint8_t k_cspin = 26;
+int8_t k_reset = 27;
+// Adafruit_SPIDevice *cap = new Adafruit_SPIDevice(k_cspin, k_sclk, k_miso, k_mosi, 2000000);
+Adafruit_CAP1188 cap = Adafruit_CAP1188(k_sclk, k_miso, k_mosi, k_cspin, 0);
 
 void setup() {
   // put your setup code here, to run once:
