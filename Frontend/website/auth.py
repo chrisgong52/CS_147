@@ -1,4 +1,5 @@
 from flask import Blueprint, render_template, request, flash
+import requests
 
 auth = Blueprint("auth", __name__)
 
@@ -32,5 +33,8 @@ def sign_up():
         else:
             flash("Account created!", category = "success")
             # add user to db
+        payload = {"var": 10}
+        r = requests.get("http://3.21.98.211:5000/", params=payload)
+        # p = requests.post("http://3.21.98.211:5000/", params=payload)
     return render_template("sign_up.html")
     # return "<p>Sign Up</p>"

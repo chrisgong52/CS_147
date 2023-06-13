@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+<style>
+    .tab1 {
+        tab-size: 2;
+    }
+
+    .tab2 {
+        tab-size: 4;
+    }
+
+    .tab4 {
+        tab-size: 8;
+    }
+</style>
+<form method="POST">
+    <h3 align="center">Plant Status</h3>
+    <img src="https://img.freepik.com/free-vector/plant-white_1308-41021.jpg?w=2000" width="500" height="575">
+    <h2 align="center">Health: {{health}}</h2>
+    <pre class="tab2">Standing/ Tipped: {{tip}}    Sunlight (MM:SS): {{sunlight}}    Darkness (MM:SS): {{dark}}    Temperature (F): {{temp}}</pre>
+</form>
+{% endblock %}
